@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muqadas Ejaz | AI Engineer</title>
+<meta name="description" content="Muqadas Ejaz, AI Engineer at ExtreemTek and Kaggle Grandmaster. Deepfake detection, computer vision, RAG and agentic AI.">
+<meta name="theme-color" content="#0b0b0a">
+<meta property="og:title" content="Muqadas Ejaz | AI Engineer">
+<meta property="og:description" content="AI Engineer at ExtreemTek and Kaggle Grandmaster. Computer vision, RAG, LLMs, AI agents and AI automation.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0b0a'/%3E%3Ctext x='12' y='46' font-family='Georgia,serif' font-size='40' fill='%23f3f0e6'%3Em%3C/text%3E%3Ccircle cx='52' cy='42' r='5' fill='%23ffc928'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0b0a; --bg2:#121210; --card:#161614; --line:#2a2925;
+  --text:#f3f0e6; --muted:#a19d90; --dim:#6f6c63;
+  --y:#ffc928; --y2:#ffd95c; --ink:#0b0b0a;
+  --serif:"Instrument Serif",Georgia,serif;
+  --sans:"Manrope",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --max:1180px;
+}
+html.light{
+  --bg:#f7f4ea; --bg2:#efebde; --card:#fffdf6; --line:#ddd7c6;
+  --text:#121210; --muted:#5d5a51; --dim:#8b877b;
+  --y:#e0a800; --y2:#c99600;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;transition:background .3s,color .3s}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--y);color:var(--ink);padding:8px 14px;border-radius:6px;z-index:99}
+.skip:focus{left:12px}
+
+/* NAV */
+header.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:20px}
+.logo{font-family:var(--serif);font-size:30px;line-height:1;letter-spacing:-.5px}
+.logo span{color:var(--y)}
+.nav ul{display:flex;gap:26px;list-style:none;font-size:14px;color:var(--muted)}
+.nav ul a:hover{color:var(--text)}
+.nav-r{display:flex;align-items:center;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;padding:11px 18px;border-radius:8px;border:1px solid var(--line);transition:all .2s;cursor:pointer;background:none;color:var(--text);font-family:inherit}
+.btn:hover{border-color:var(--y);color:var(--y)}
+.btn.solid{background:var(--y);color:var(--ink);border-color:var(--y)}
+.btn.solid:hover{background:var(--y2);color:var(--ink)}
+.icon-btn{width:40px;height:40px;border-radius:8px;border:1px solid var(--line);display:grid;place-items:center;cursor:pointer;background:none;color:var(--text)}
+.icon-btn:hover{border-color:var(--y);color:var(--y)}
+.menu-btn{display:none}
+.mobile-menu{display:none;border-top:1px solid var(--line);padding:14px 28px 22px}
+.mobile-menu a{display:block;padding:10px 0;color:var(--muted);border-bottom:1px solid var(--line)}
+.mobile-menu.open{display:block}
+
+/* HERO */
+.hero{padding:84px 0 70px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-180px;top:-120px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--y) 16%,transparent),transparent 65%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.35fr .9fr;gap:64px;align-items:start}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:2.2px;text-transform:uppercase;color:var(--y)}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(56px,8vw,104px);line-height:.95;letter-spacing:-2px;margin:22px 0 26px}
+h1 em{color:var(--y);font-style:italic}
+.tag{font-size:21px;font-weight:600;margin-bottom:14px}
+.lede{color:var(--muted);font-size:16.5px;max-width:620px}
+.lede p+p{margin-top:12px}
+.lede strong{color:var(--text);font-weight:600}
+.lede .biz{margin-top:18px;padding:14px 18px;border-left:3px solid var(--y);background:color-mix(in srgb,var(--y) 8%,transparent);border-radius:0 10px 10px 0;color:var(--text)}
+.lede .biz a{color:var(--y);font-weight:700;white-space:nowrap}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:34px 0 30px}
+.status{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--y);box-shadow:0 0 0 0 var(--y);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--y) 60%,transparent)}70%{box-shadow:0 0 0 10px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.portrait{position:relative}
+.portrait .meta{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;letter-spacing:1.8px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.photo{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line);aspect-ratio:1/1}
+.photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.95)}
+.photo::after{content:"";position:absolute;inset:auto 0 0 0;height:6px;background:var(--y)}
+.badge{position:absolute;left:-22px;bottom:110px;background:var(--y);color:var(--ink);padding:12px 16px;border-radius:10px;font-weight:700;font-size:13px;line-height:1.3;box-shadow:0 14px 40px rgba(0,0,0,.35)}
+.badge b{display:block;font-family:var(--serif);font-weight:400;font-size:28px;line-height:1}
+.cap{display:flex;justify-content:space-between;align-items:end;margin-top:16px;font-size:14px;color:var(--muted)}
+.cap .sig{font-family:var(--serif);font-style:italic;font-size:30px;color:var(--y)}
+
+/* STATS */
+.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2)}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:30px 24px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:none}
+.stat b{display:block;font-family:var(--serif);font-weight:400;font-size:46px;line-height:1;color:var(--y)}
+.stat span{font-size:13.5px;color:var(--muted)}
+
+/* SECTIONS */
+section.sec{padding:100px 0;border-bottom:1px solid var(--line)}
+.sec-head{display:grid;grid-template-columns:1fr auto;align-items:end;gap:24px;margin-bottom:52px}
+.sec-head .eyebrow{display:flex;gap:14px;margin-bottom:16px}
+.sec-head .eyebrow i{font-style:normal;color:var(--dim)}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(40px,5vw,62px);line-height:1;letter-spacing:-1px}
+h2 em{color:var(--y)}
+.sub{color:var(--muted);margin-top:14px;max-width:620px}
+.link-arrow{font-size:14px;font-weight:600;color:var(--y);white-space:nowrap;border-bottom:1px solid transparent}
+.link-arrow:hover{border-color:var(--y)}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:56px}
+.about-grid p{color:var(--muted);font-size:17px;margin-bottom:18px}
+.about-grid p strong{color:var(--text);font-weight:600}
+.focus{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.focus div{border:1px solid var(--line);border-radius:12px;padding:18px;background:var(--card)}
+.focus h4{font-size:15px;margin-bottom:4px}
+.focus p{font-size:13.5px!important;margin:0!important}
+.focus .n{font-family:var(--mono);font-size:11px;color:var(--y);letter-spacing:1.5px}
+
+.help{margin-top:56px;padding-top:40px;border-top:1px solid var(--line)}
+.help-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.help-grid div{border:1px solid var(--line);border-radius:12px;padding:22px;background:var(--card)}
+.help-grid b{display:block;color:var(--y);font-size:20px;margin-bottom:10px}
+.help-grid h4{font-size:16px;margin-bottom:6px}
+.help-grid p{font-size:14px;color:var(--muted)}
+
+/* EXPERIENCE */
+.timeline{position:relative}
+.job{display:grid;grid-template-columns:220px 1fr;gap:40px;padding:34px 0;border-top:1px solid var(--line)}
+.job:last-child{border-bottom:1px solid var(--line)}
+.job .when{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.job .when .now{display:inline-block;margin-top:8px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;background:var(--y);color:var(--ink);padding:3px 8px;border-radius:4px}
+.job h3{font-size:22px;font-weight:600;line-height:1.3}
+.job .org{color:var(--y);font-weight:600;font-size:15px;margin:4px 0 14px}
+.job ul{list-style:none;color:var(--muted)}
+.job li{position:relative;padding-left:20px;margin-bottom:8px}
+.job li::before{content:"";position:absolute;left:0;top:11px;width:8px;height:2px;background:var(--y)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.chip{font-family:var(--mono);font-size:11.5px;padding:4px 9px;border:1px solid var(--line);border-radius:5px;color:var(--muted)}
+
+/* EDUCATION */
+.edu{display:grid;grid-template-columns:220px 1fr;gap:40px;border:1px solid var(--line);border-radius:16px;padding:36px;background:var(--card)}
+.edu-yr{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.edu-mark{margin-top:18px;width:110px;height:110px;border-radius:14px;background:var(--y);color:var(--ink);display:grid;place-items:center;font-family:var(--serif);font-size:52px;line-height:1}
+.edu h3{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3vw,38px);line-height:1.1}
+.edu .org{color:var(--y);font-weight:600;font-size:15px;margin:8px 0 14px}
+.edu-p{color:var(--muted);max-width:640px}
+.course{display:flex;flex-wrap:wrap;gap:8px}
+.course span{font-size:13.5px;font-weight:600;padding:8px 13px;border:1px solid var(--line);border-radius:8px;background:var(--bg2)}
+.course span:hover{border-color:var(--y);color:var(--y)}
+.fyp{margin-top:26px;padding:20px 22px;border-left:3px solid var(--y);background:var(--bg2);border-radius:0 10px 10px 0}
+.fyp h4{font-size:17px;margin:8px 0 6px}
+.fyp p{font-size:14px;color:var(--muted)}
+.fyp a{color:var(--y);font-weight:600}
+
+/* FEATURED */
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.fcard.flag{border-color:var(--y);background:linear-gradient(160deg,color-mix(in srgb,var(--y) 10%,var(--card)),var(--card) 60%)}
+.fcard{position:relative;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:30px;display:flex;flex-direction:column;transition:transform .25s,border-color .25s}
+.fcard:hover{transform:translateY(-4px);border-color:var(--y)}
+.fcard.big{grid-column:span 2}
+.fcard.big p{max-width:760px}
+.fcard .k{font-family:var(--mono);font-size:11px;letter-spacing:1.8px;text-transform:uppercase;color:var(--y);margin-bottom:14px}
+.fcard h3{font-family:var(--serif);font-weight:400;font-size:30px;line-height:1.05;margin-bottom:12px}
+.fcard p{color:var(--muted);font-size:15px}
+.fcard .links{display:flex;gap:16px;margin-top:auto;padding-top:22px;font-size:14px;font-weight:600}
+.fcard .links a{color:var(--y)}
+.fcard .links a:hover{text-decoration:underline}
+.metrics{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-content:start}
+.metric{border:1px solid var(--line);border-radius:12px;padding:18px;background:var(--bg2)}
+.metric b{font-family:var(--serif);font-weight:400;font-size:38px;color:var(--y);line-height:1}
+.metric span{display:block;font-size:13px;color:var(--muted);margin-top:4px}
+
+/* ALL PROJECTS */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:60px 0 24px}
+.filters button{font-family:var(--sans);font-size:13.5px;font-weight:600;padding:9px 15px;border-radius:999px;border:1px solid var(--line);background:none;color:var(--muted);cursor:pointer}
+.filters button:hover{color:var(--text)}
+.filters button.on{background:var(--y);border-color:var(--y);color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.pcard{border:1px solid var(--line);border-radius:12px;padding:20px;background:var(--card);display:flex;flex-direction:column;transition:border-color .2s}
+.pcard:hover{border-color:var(--y)}
+.pcard .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-family:var(--mono);font-size:11px;color:var(--dim)}
+.pcard .top .star{color:var(--y)}
+.pcard h4{font-size:16px;font-weight:700;line-height:1.35;margin-bottom:8px}
+.pcard p{font-size:13.5px;color:var(--muted);flex:1}
+.pcard .links{display:flex;gap:14px;margin-top:14px;font-size:13px;font-weight:600}
+.pcard .links a{color:var(--y)}
+.more{display:flex;justify-content:center;margin-top:30px}
+
+/* KAGGLE */
+.kag{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.kbig{background:var(--y);color:var(--ink);border-radius:16px;padding:38px;position:relative;overflow:hidden}
+.kbig .eyebrow{color:var(--ink);opacity:.7}
+.kbig h3{font-family:var(--serif);font-weight:400;font-size:64px;line-height:.95;margin:14px 0}
+.kbig p{font-size:16px;max-width:420px}
+.kbig .rank{position:absolute;right:26px;bottom:-30px;font-family:var(--serif);font-size:220px;line-height:1;opacity:.13}
+.klist{display:flex;flex-direction:column;gap:12px}
+.kitem{border:1px solid var(--line);border-radius:12px;padding:20px 22px;background:var(--card);display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center}
+.kitem b{font-family:var(--serif);font-weight:400;font-size:34px;color:var(--y);min-width:80px}
+.kitem h4{font-size:15px}
+.kitem p{font-size:13.5px;color:var(--muted)}
+
+.med{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:3px;vertical-align:0}
+.med.g{background:#e8b923}.med.s{background:#b8b8b8}.med.b{background:#c07a43}
+.proof{margin-top:22px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#0d0d0d;box-shadow:0 30px 80px rgba(0,0,0,.35)}
+.proof-bar{display:flex;align-items:center;gap:7px;padding:12px 16px;background:#18181a;border-bottom:1px solid #2a2925}
+.proof-bar span{width:10px;height:10px;border-radius:50%;background:#3a3936}
+.proof-bar span:first-child{background:var(--y)}
+.proof-bar em{font-style:normal;font-family:var(--mono);font-size:12px;color:#8f8b80;margin-left:10px;flex:1;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.proof-bar strong{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;background:var(--y);color:#0b0b0a;padding:3px 8px;border-radius:4px}
+.proof-img{position:relative}
+.proof-img img{width:100%}
+.hl{position:absolute;left:1.2%;right:0.8%;top:93.2%;height:6.6%;border:2px solid var(--y);border-radius:6px;box-shadow:0 0 0 4px color-mix(in srgb,var(--y) 25%,transparent);pointer-events:none}
+.hl-tag{position:absolute;right:1.2%;top:85.5%;background:var(--y);color:#0b0b0a;font-size:12px;font-weight:700;padding:4px 10px;border-radius:5px;white-space:nowrap}
+.proof figcaption{padding:12px 16px;font-size:13px;color:#8f8b80;border-top:1px solid #2a2925}
+
+
+/* SKILLS */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.skill{border:1px solid var(--line);border-radius:12px;padding:24px;background:var(--card)}
+.skill h4{font-size:16px;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.skill h4::before{content:"";width:10px;height:10px;background:var(--y);border-radius:2px}
+
+/* CERTS */
+.certs{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.cert{border:1px solid var(--line);border-radius:12px;padding:22px 24px;background:var(--card);display:flex;justify-content:space-between;align-items:center;gap:16px;transition:border-color .2s}
+.cert:hover{border-color:var(--y)}
+.cert h4{font-size:16px}
+.cert p{font-size:13.5px;color:var(--muted)}
+.cert .yr{font-family:var(--mono);font-size:13px;color:var(--y);white-space:nowrap}
+.cert .cid{font-family:var(--mono);font-size:11.5px;color:var(--dim);margin-top:4px;word-break:break-all}
+
+/* CONTACT */
+.contact{padding:120px 0;text-align:center}
+.contact h2{font-size:clamp(40px,5.6vw,80px);max-width:980px;margin-left:auto;margin-right:auto;text-wrap:balance;overflow-wrap:anywhere}
+.contact .sub{margin:20px auto 34px}
+.contact .cta{justify-content:center}
+.mail{font-family:var(--mono);font-size:15px;color:var(--muted)}
+.socials{display:flex;justify-content:center;flex-wrap:wrap;gap:22px;margin-top:30px;font-size:14px;font-weight:600}
+.socials a{color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:2px}
+.socials a:hover{color:var(--y);border-color:var(--y)}
+footer{border-top:1px solid var(--line);padding:30px 0;font-size:13px;color:var(--dim)}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.dot{animation:none}html{scroll-behavior:auto}}
+
+@media (max-width:980px){
+  .nav ul,.nav-r .btn{display:none}
+  .menu-btn{display:grid}
+  .hero-grid,.about-grid,.kag,.fcard.big{grid-template-columns:1fr}
+  .portrait{max-width:420px}
+  .badge{left:14px}
+  .stats .wrap{grid-template-columns:1fr 1fr}
+  .stat:nth-child(2){border-right:none}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .grid,.skills,.help-grid,.feat{grid-template-columns:1fr 1fr}
+  .job{grid-template-columns:1fr;gap:10px}
+  .edu{grid-template-columns:1fr;gap:18px;padding:26px}
+  .edu-mark{width:70px;height:70px;font-size:34px;margin-top:10px}
+}
+@media (max-width:640px){
+  .wrap{padding:0 20px}
+  .feat,.grid,.skills,.certs,.focus,.help-grid{grid-template-columns:1fr}
+  .fcard.big{grid-column:span 1}
+  .sec-head{grid-template-columns:1fr}
+  section.sec{padding:76px 0}
+  .hero{padding:56px 0}
+  .kbig{padding:28px}
+  .kbig h3{font-size:clamp(40px,12vw,64px)}
+  .kbig .rank{font-size:160px;right:14px}
+  .proof-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .proof-img{min-width:680px}
+  .proof figcaption::after{content:" Swipe sideways to see the full table.";}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a href="#top" class="logo">me<span>.</span></a>
+    <ul>
+      <li><a href="#about">How I work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#kaggle">Kaggle</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+    </ul>
+    <div class="nav-r">
+      <button class="icon-btn" id="theme" aria-label="Toggle light and dark theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg>
+      </button>
+      <a class="btn solid" href="#contact">Let's talk</a>
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="#about">How I work</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#projects">Projects</a><a href="#kaggle">Kaggle</a><a href="#skills">Skills</a><a href="#certifications">Certifications</a><a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="main">
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">AI Engineer · Kaggle Grandmaster</div>
+      <h1>Muqadas<br><em>Ejaz.</em></h1>
+      <p class="tag">I build AI that people actually use.</p>
+      <div class="lede">
+        <p>I'm an AI Engineer at ExtreemTek and a Kaggle Grandmaster. I work across <strong>computer vision, deep learning, RAG, LLMs, AI agents, agentic AI and AI automation</strong>, and I like taking a model all the way from training to a product people can actually use.</p>
+        <p>A few things I've built: <strong>AI Detector Deep Fake PRO</strong>, ExtreemTek's multi-modal detector for AI images, text, video and voice; <strong>LinkedIn Finder</strong>, which turns a one-line description into ranked LinkedIn profiles; <strong>AIMetaScrubber</strong>, a browser tool that strips AI metadata from images; and real-time <strong>plant disease detection with YOLOv8</strong>.</p>
+        <p class="biz"><strong>Have a product idea?</strong> If you want to build something with AI at its core, look through my work below and send me a message. I'll help you shape the idea, build it and ship it as a real product. <a href="#contact">Let's talk →</a></p>
+      </div>
+      <div class="cta">
+        <a class="btn solid" href="#projects">Explore my work →</a>
+        <a class="btn" href="https://github.com/muqadasejaz" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/muqadasejaz/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="status"><span class="dot"></span>Open to AI engineering roles and collaborations</div>
+    </div>
+    <div class="portrait">
+      <div class="meta"><span>Profile</span><span>01</span></div>
+      <div class="photo"><img src="muqadas.jpg" alt="Portrait of Muqadas Ejaz"></div>
+      <div class="badge"><b>#5</b>Global rank<br>Kaggle Datasets</div>
+      <div class="cap"><span>Islamabad, Pakistan</span><span class="sig">Muqadas.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><b>#5</b><span>Global, Kaggle Datasets. Top-ranked woman in the category</span></div>
+    <div class="stat"><b>50+</b><span>Public repositories on GitHub</span></div>
+    <div class="stat"><b>10+</b><span>Live, deployed AI demos</span></div>
+    <div class="stat"><b>7</b><span>Certifications from Anthropic, Google, Coursera and more</span></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><div class="eyebrow"><i>01</i>How I work</div><h2>Hi, I'm Muqadas. I turn <em>AI ideas</em> into working systems.</h2></div>
+    </div>
+    <div class="about-grid reveal">
+      <div>
+        <p>Every project starts with the problem, not the model. I look at the data first, pick the simplest approach that could work, and only add complexity when the results ask for it.</p>
+        <p>From there I handle the full path: <strong>preparing data, training and fine-tuning, and testing on data the model hasn't seen</strong>. Then I wrap it in an API or a simple app, so people can try it instead of just reading about it.</p>
+        <p>Benchmarks are where I start, not where I stop. The real test is how a system holds up on messy, real-world inputs, and that's where I spend most of my time.</p>
+      </div>
+      <div>
+        <div class="eyebrow" style="margin-bottom:14px">Areas of work</div>
+        <div class="focus">
+          <div><span class="n">01</span><h4>Computer vision</h4><p>Detection, tracking, classification and image forensics with CNNs, ViTs and YOLO.</p></div>
+          <div><span class="n">02</span><h4>LLMs & RAG</h4><p>Grounded chat over your documents, fine-tuning and prompt design.</p></div>
+          <div><span class="n">03</span><h4>AI agents</h4><p>Multi-agent systems with LangGraph, tool use and MCP servers.</p></div>
+          <div><span class="n">04</span><h4>AI automation</h4><p>n8n workflows that connect AI to email, sheets and everyday tools.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="help reveal">
+      <div class="eyebrow" style="margin-bottom:18px">How I can help</div>
+      <div class="help-grid">
+        <div><b>→</b><h4>Teams & startups</h4><p>I take your AI idea to a working prototype, then to a deployable API, without months lost to experiments.</p></div>
+        <div><b>→</b><h4>Businesses</h4><p>I find the repetitive work AI agents and automation can take off your team's plate, and build it.</p></div>
+        <div><b>→</b><h4>Researchers</h4><p>I run clean experiments, build datasets and test models across datasets, not just on one benchmark.</p></div>
+        <div><b>→</b><h4>Learners</h4><p>I share what I learn about AI in plain English and Urdu, so more people can get started.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="sec" id="experience">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><div class="eyebrow"><i>02</i>Experience</div><h2>Where I've <em>built</em> things.</h2></div>
+      <a class="link-arrow" href="https://www.linkedin.com/in/muqadasejaz/" target="_blank" rel="noopener">Full profile on LinkedIn →</a>
+    </div>
+    <div class="timeline" id="jobs"></div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="sec" id="education">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><div class="eyebrow"><i>03</i>Education</div><h2>Where the <em>foundations</em> came from.</h2></div>
+    </div>
+    <div class="edu reveal">
+      <div class="edu-side">
+        <span class="edu-yr">2021 – 2025</span>
+        <div class="edu-mark">BS</div>
+      </div>
+      <div>
+        <h3>Bachelor of Computer Science, Artificial Intelligence</h3>
+        <div class="org">Arid Agriculture University, Rawalpindi</div>
+        <p class="edu-p">A computer science degree with a specialisation in artificial intelligence, covering the core of software and systems alongside machine learning and deep learning.</p>
+        <div class="eyebrow" style="margin:22px 0 12px">Key coursework</div>
+        <div class="course">
+          <span>Data Structures &amp; Algorithms</span><span>Operating Systems</span><span>Machine Learning</span><span>Neural Networks</span><span>Deep Learning</span><span>Computer Vision</span><span>Data Mining</span>
+        </div>
+        <div class="fyp">
+          <span class="eyebrow">Final year project</span>
+          <h4>Micro Facial Expression Recognition in Suspect Interrogation</h4>
+          <p>A CNN trained on CASME II and FER-2013 to detect subtle, involuntary facial expressions. <a href="https://github.com/muqadasejaz/Micro-Facial-Expression-Recognition-using-CNN" target="_blank" rel="noopener">View code ↗</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="sec" id="projects">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><div class="eyebrow"><i>04</i>Projects</div><h2>Selected <em>work.</em></h2><p class="sub">Most of these are deployed. Click a demo and try it yourself.</p></div>
+      <a class="link-arrow" href="https://github.com/muqadasejaz?tab=repositories" target="_blank" rel="noopener">All repositories →</a>
+    </div>
+
+    <div class="feat reveal">
+      <article class="fcard flag">
+        <div class="k">ExtreemTek · Flagship</div>
+        <h3>AI Detector Deep Fake PRO</h3>
+        <p>A multi-modal forensic tool that checks images, text, video and voice for signs of AI generation or manipulation, with iOS and Android apps. I build the ML models behind it, mainly the image and video detection models, and the APIs that serve them to the app.</p>
+        <div class="chips"><span class="chip">ML models</span><span class="chip">Image models</span><span class="chip">Video models</span><span class="chip">PyTorch</span><span class="chip">FastAPI</span></div>
+        <div class="links"><a href="https://extreemtek.com/deepfake/" target="_blank" rel="noopener">Visit product ↗</a></div>
+      </article>
+
+      <article class="fcard">
+        <div class="k">Lead generation · Live</div>
+        <h3>LinkedIn Finder</h3>
+        <p>Describe the person you need in one sentence and get ranked LinkedIn profiles back. It also finds verified work emails and helps send personal outreach messages, with search, filters and export built in.</p>
+        <div class="chips"><span class="chip">Lead Finder</span><span class="chip">n8n</span><span class="chip">APIs</span><span class="chip">Webhook</span><span class="chip">Automation</span><span class="chip">Scraping</span></div>
+        <div class="links"><a href="https://linkedinfinder.vercel.app/" target="_blank" rel="noopener">Live site ↗</a></div>
+      </article>
+
+      <article class="fcard">
+        <div class="k">Privacy tool · Live</div>
+        <h3>AIMetaScrubber</h3>
+        <p>A free, browser-only tool to inspect and strip C2PA, EXIF, XMP, IPTC and AI prompt data from images. Nothing is uploaded and there's no signup.</p>
+        <div class="chips"><span class="chip">JavaScript</span><span class="chip">HTML/CSS</span><span class="chip">C2PA</span><span class="chip">EXIF / XMP / IPTC</span><span class="chip">Vercel</span></div>
+        <div class="links"><a href="https://ai-meta-scrubb.vercel.app" target="_blank" rel="noopener">Live site ↗</a><a href="https://github.com/muqadasejaz/AIMetaScrubber" target="_blank" rel="noopener">Code</a></div>
+      </article>
+
+      <article class="fcard">
+        <div class="k">Computer vision · 34★</div>
+        <h3>Plant Detection with YOLOv8</h3>
+        <p>Real-time detection and classification of healthy and diseased plant leaves for smart agriculture. My most-starred repository.</p>
+        <div class="chips"><span class="chip">YOLOv8</span><span class="chip">Roboflow</span><span class="chip">OpenCV</span><span class="chip">Python</span><span class="chip">Streamlit</span></div>
+        <div class="links"><a href="https://plant-dectection.streamlit.app/" target="_blank" rel="noopener">Demo ↗</a><a href="https://github.com/muqadasejaz/Plant-Detection-using-YOLOv8" target="_blank" rel="noopener">Code</a></div>
+      </article>
+
+      <article class="fcard">
+        <div class="k">Computer vision · Live</div>
+        <h3>Human Detection</h3>
+        <p>Detects and counts people in real time from a webcam or video file with YOLOv8, drawing a box around each person and showing the total on every frame.</p>
+        <div class="chips"><span class="chip">YOLOv8</span><span class="chip">Ultralytics</span><span class="chip">OpenCV</span><span class="chip">Python</span><span class="chip">Streamlit</span></div>
+        <div class="links"><a href="https://person-detection.streamlit.app/" target="_blank" rel="noopener">Demo ↗</a><a href="https://github.com/muqadasejaz/Human-Detector" target="_blank" rel="noopener">Code</a></div>
+      </article>
+
+      <article class="fcard">
+        <div class="k">Community · Live</div>
+        <h3>GKS Scholarship Hub</h3>
+        <p>An all-in-one hub for Global Korea Scholarship applicants: tracks, universities, departments, verified professors, email templates and an outreach tracker. Free to use.</p>
+        <div class="chips"><span class="chip">HTML/CSS</span><span class="chip">JavaScript</span><span class="chip">Vercel</span></div>
+        <div class="links"><a href="https://gks-scholarship-hub.vercel.app/" target="_blank" rel="noopener">Live site ↗</a><a href="https://github.com/muqadasejaz/GKS-Scholarship-Hub" target="_blank" rel="noopener">Code</a></div>
+      </article>
+    </div>
+
+    <div class="filters reveal" id="filters"></div>
+    <div class="grid" id="grid"></div>
+    <div class="more"><a class="btn" href="https://github.com/muqadasejaz?tab=repositories" target="_blank" rel="noopener">See all 50+ repositories on GitHub →</a></div>
+  </div>
+</section>
+
+<!-- KAGGLE -->
+<section class="sec" id="kaggle">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><div class="eyebrow"><i>05</i>Kaggle</div><h2>Three years. <em>Grandmaster.</em></h2></div>
+      <a class="link-arrow" href="https://www.kaggle.com/muqaddasejaz" target="_blank" rel="noopener">Kaggle profile →</a>
+    </div>
+    <div class="kag reveal">
+      <div class="kbig">
+        <div class="eyebrow">Datasets · Global ranking</div>
+        <h3>Kaggle<br>Grandmaster</h3>
+        <p>Ranked 5th in the world in Datasets and the highest-ranked woman in that category. I worked up through Expert, Master and Grandmaster tiers in both Datasets and Notebooks over more than three years.</p>
+        <div class="rank">5</div>
+      </div>
+      <div class="klist">
+        <div class="kitem"><b>#5</b><div><h4>Global rank, Datasets</h4><p>Top-ranked female Kaggler in the Datasets category</p></div></div>
+        <div class="kitem"><b>123</b><div><h4>Dataset Grandmasters worldwide</h4><p>I'm one of them. There are also 212 Masters and 1,604 Experts</p></div></div>
+        <div class="kitem"><b>38</b><div><h4>Dataset medals</h4><p><span class="med g"></span>16 gold &nbsp;<span class="med s"></span>18 silver &nbsp;<span class="med b"></span>4 bronze · 619 points</p></div></div>
+        <div class="kitem"><b>3+</b><div><h4>Years of progression</h4><p>Expert → Master → Grandmaster in Datasets and Notebooks</p></div></div>
+      </div>
+    </div>
+    <figure class="proof reveal">
+      <div class="proof-bar"><span></span><span></span><span></span><em>kaggle.com/rankings · Dataset Rankings</em><strong>Leaderboard</strong></div>
+      <div class="proof-scroll"><div class="proof-img">
+        <img src="kaggle-rank.png" alt="Kaggle Dataset Rankings leaderboard showing MuqadasEjaz at rank 5 as a Grandmaster with 16 gold, 18 silver and 4 bronze medals and 619 points">
+        <span class="hl" aria-hidden="true"></span>
+        <span class="hl-tag" aria-hidden="true">That's me · #5</span>
+      </div></div>
+      <figcaption>Kaggle's global Dataset Rankings leaderboard, captured November 2026. My row is highlighted.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="sec" id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><div class="eyebrow"><i>06</i>Skills</div><h2>The <em>toolkit.</em></h2></div>
+    </div>
+    <div class="skills reveal" id="skillsGrid"></div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="sec" id="certifications">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><div class="eyebrow"><i>07</i>Certifications</div><h2>Always <em>learning.</em></h2><p class="sub">7 licenses and certifications, from Anthropic, Google, Simplilearn, Coursera and more.</p></div>
+      <a class="link-arrow" href="https://www.linkedin.com/in/muqadasejaz/details/certifications/" target="_blank" rel="noopener">All on LinkedIn →</a>
+    </div>
+    <div class="certs reveal" id="certs"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap reveal">
+    <div class="eyebrow">08 · Contact</div>
+    <h2 style="margin-top:18px">What should we <em>build</em> together?</h2>
+    <p class="sub">I'm open to AI engineering roles, research collaborations and interesting projects in computer vision, RAG, LLMs, AI agents and AI automation.</p>
+    <div class="cta"><a class="btn solid" href="mailto:muqadasejaz3@gmail.com">Email me →</a><a class="btn" href="https://www.linkedin.com/in/muqadasejaz/" target="_blank" rel="noopener">Connect on LinkedIn</a></div>
+    <p class="mail">muqadasejaz3@gmail.com</p>
+    <div class="socials">
+      <a href="https://github.com/muqadasejaz" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/muqadasejaz/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://x.com/muqadasejaz_ai" target="_blank" rel="noopener">X</a>
+      <a href="https://www.instagram.com/muqadasejaz.ai/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.kaggle.com/muqaddasejaz" target="_blank" rel="noopener">Kaggle</a>
+      <a href="https://leetcode.com/u/MuqadasEjaz/" target="_blank" rel="noopener">LeetCode</a>
+      <a href="https://linktr.ee/muqadasejaz" target="_blank" rel="noopener">Linktree</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span><span class="logo" style="font-size:22px">me<span>.</span></span> &nbsp;© <span id="yr"></span> Muqadas Ejaz</span>
+    <span>AI Engineer · Islamabad, Pakistan</span>
+  </div>
+</footer>
+
+<script>
+/* ============ EDIT YOUR CONTENT HERE ============ */
+const EXPERIENCE = [
+  { role:"AI Engineer", org:"ExtreemTek", when:"2025 – Present", current:true,
+    points:[
+      "Lead model work on DeepSentinel, a multi-modal deepfake and AI-content detection suite (text, image, video, audio).",
+      "Trained and fine-tuned image and video detection models, including EfficientNet and ViT architectures.",
+      "Built a production FastAPI service with Docker, Pydantic v2, lazy model loading and unit tests for the mobile app team.",
+      "Designed a provenance layer that reads C2PA, SynthID, EXIF, XMP and IPTC signals before the classifier runs.",
+      "Built AI automation workflows in n8n and a LangGraph multi-agent content pipeline. Also run DeepSentinel's social media and copywriting."
+    ],
+    tags:["PyTorch","TensorFlow","FastAPI","Docker","LangGraph","n8n","Streamlit"] },
+  { role:"AI Engineer Intern", org:"DevRolin", when:"Jul 2025 – Sep 2025",
+    points:[
+      "Fine-tuned an Urdu text-to-speech model with SpeechT5, covering dataset preprocessing, training and optimisation.",
+      "Integrated the model into a real-world application."
+    ], tags:["SpeechT5","Hugging Face","TTS","Urdu NLP"] },
+  { role:"Machine Learning Intern", org:"Arch Technologies", when:"May 2025 – Jul 2025",
+    points:[
+      "Forecast ETH/USDT market trends with ARIMA time series models.",
+      "Used PyTorch, CNNs and data pipelines on financial and medical AI projects."
+    ], tags:["ARIMA","PyTorch","CNNs","Time series"] },
+  { role:"AI & ML Trainee", org:"PMAS Arid Agriculture University", when:"Sep 2023 – Oct 2024",
+    points:[
+      "Built diabetes and heart disease prediction models with scikit-learn.",
+      "Developed football player and ball detection and tracking with YOLO and Norfair."
+    ], tags:["scikit-learn","YOLO","Norfair","OpenCV"] }
+];
+
+// cat: genai | cv | nlp | ml | auto
+const PROJECTS = [
+  {n:"SmartSupport Customer Support Agent",c:"genai",d:"LangGraph agent that classifies queries, reads sentiment and answers technical, billing and general issues.",demo:"https://customersupportagentsmartsupport.streamlit.app/",repo:"SmartSupport-Customer-Support-Agent"},
+  {n:"OpenPilot",c:"genai",d:"An autonomous AI teammate that helps developers understand open source projects and submit quality pull requests. Built for a Devpost hackathon.",repo:"OpenPilot"},
+  {n:"PDF QA RAG System",c:"genai",d:"Upload a PDF and ask questions. LangChain, Ollama, Llama 3 and Chroma, and it says \"I don't know\" when the answer isn't there.",repo:"PDF-QA-RAG-System",s:12},
+  {n:"MuseMate AI Chatbot",c:"genai",d:"A friendly, creative chat companion on Llama 3.1-8B-Instruct, deployed with Streamlit.",repo:"MuseMate---AI-Chatbot-"},
+  {n:"Fine-tuning Llama 3.2 3B on Medical CoT",c:"genai",d:"Fine-tuned Llama 3.2 3B on a medical chain-of-thought dataset for step-by-step clinical reasoning.",repo:"fine-tune-llama-3-2-3b-on-med-cot-dataset"},
+  {n:"Agentic AI with LangGraph",c:"genai",d:"Structured notes and builds on agentic workflows, system design and autonomous AI apps.",repo:"Agentic-AI-using-LangGraph-"},
+  {n:"Plant Detection with YOLOv8",c:"cv",d:"Real-time detection of healthy and diseased plant leaves for smart agriculture. My most-starred repo.",demo:"https://plant-dectection.streamlit.app/",repo:"Plant-Detection-using-YOLOv8",s:34},
+  {n:"Human Detector",c:"cv",d:"Real-time person detection and counting from webcam or video with YOLOv8.",demo:"https://person-detection.streamlit.app/",repo:"Human-Detector",s:10},
+  {n:"Micro Facial Expression Recognition",c:"cv",d:"Final year project. CNN trained on CASME II and FER-2013 to catch subtle facial expressions in suspect interrogation.",repo:"Micro-Facial-Expression-Recognition-using-CNN"},
+  {n:"MedSAM-2 on BraTS 2019",c:"cv",d:"Inference and evaluation of MedSAM-2 for brain tumour segmentation.",repo:"Inference-and-Evaluation-of-MedSAM-2-on-Brain-Tumor-Segmentation-BRATS-2019-"},
+  {n:"Fruit Classification",c:"cv",d:"Multiclass fruit image classifier using pre-trained VGG16 and MobileNet.",repo:"Fruit-Classification-Pre-trained-Models"},
+  {n:"Cat vs Dog Classification",c:"cv",d:"Transfer learning with a pre-trained ResNet50.",repo:"-Cat-vs-Dog-Image-Classification"},
+  {n:"Fake News Detection",c:"nlp",d:"TF-IDF and gradient boosting classifier that flags fake vs real news articles.",demo:"https://fake-newsdetectionsystem.streamlit.app/",repo:"Fake-News-Detection"},
+  {n:"Movie Review Sentiment (LSTM vs BiLSTM)",c:"nlp",d:"Compares LSTM and BiLSTM on IMDB reviews.",repo:"Movie-Review-Sentiment-Analysis-using-LSTM-BiLSTM"},
+  {n:"Classifying Newswires",c:"nlp",d:"Keras neural network sorting Reuters newswires into 46 topics.",repo:"Classifying-Newswires"},
+  {n:"Speech Recognition System",c:"nlp",d:"Speech to text with voice feedback and voice-controlled web browsing.",repo:"Speech-Recognition-System-"},
+  {n:"Email Spam Classifier",c:"nlp",d:"Logistic regression spam filter with NLP preprocessing.",repo:"Email-Spam-Classifier"},
+  {n:"Diabetes Prediction System",c:"ml",d:"Early diabetes detection from diagnostic parameters, deployed on Streamlit.",demo:"https://diabetes-prediction-system-ml.streamlit.app/",repo:"Diabetes-Prediction-System"},
+  {n:"Road Accident Risk Prediction",c:"ml",d:"LightGBM model estimating accident likelihood from road, weather and environment.",repo:"Predicting-Road-Accident-Risk"},
+  {n:"ETH/USDT Forecasting with ARIMA",c:"ml",d:"Time series analysis and price projection for Ethereum.",repo:"Time-Series-Analysis-of-Ethereum-ETHUSDT-Market-Projections-using-ARIMA"},
+  {n:"Heart Disease Prediction",c:"ml",d:"Logistic regression on the Cleveland dataset with a Flask GUI, 88% accuracy.",repo:"Heart-Diseases-Prediction"},
+  {n:"Customer Churn Prediction",c:"ml",d:"Compares KNN, SVC, logistic regression, decision tree and random forest, with a CLI.",repo:"Customer-Churn-Prediction"},
+  {n:"PSL Winner Prediction",c:"ml",d:"Random forest model predicting Pakistan Super League match winners.",repo:"Pakistan-Super-League-Winner-Prediction"},
+  {n:"n8n Smart Email Assistant",c:"auto",d:"Prioritises Gmail, applies labels and drafts or sends replies automatically.",repo:"n8n-Smart-Email-Assistant"},
+  {n:"n8n Data Analyst Agent",c:"auto",d:"Turns plain-English questions into charts and an executive summary from Google Sheets, sent by email.",repo:"n8n-Data-Analyst-Agent"},
+  {n:"Form Response Auto Email",c:"auto",d:"n8n workflow that stores form submissions in Sheets and sends a personalised confirmation.",repo:"Form-Response-Auto-Email---n8n-Workflow"}
+];
+// The only projects shown under "All", in this order (names must match PROJECTS or ALL_ONLY)
+const TOP = ["SmartSupport Customer Support Agent","PDF QA RAG System","DocuMind RAG Chatbot","Fake News Detection","Plant Detection with YOLOv8","Human Detector","Diabetes Prediction System","AI Detector Deep Fake PRO","LinkedIn Finder","AIMetaScrubber","GKS Scholarship Hub","OpenPilot"];
+const ALL_ONLY = [
+  {n:"DocuMind RAG Chatbot",c:"genai",d:"Chat with PDFs using LangGraph, Groq and FAISS, with local embeddings and streamed, grounded answers.",demo:"https://rag-chatbot-langgraph.streamlit.app/",repo:"DocuMind-RAG-Chatbot"},
+  {n:"AI Detector Deep Fake PRO",c:"cv",lab:"ExtreemTek",d:"Multi-modal detector for AI images, text, video and voice. I build the image and video models.",demo:"https://extreemtek.com/deepfake/",noRepo:true},
+  {n:"LinkedIn Finder",c:"genai",lab:"Lead generation",d:"Describe a person in one sentence and get ranked LinkedIn profiles and verified work emails.",demo:"https://linkedinfinder.vercel.app/",noRepo:true},
+  {n:"AIMetaScrubber",c:"cv",lab:"Privacy tool",d:"Browser-only tool to inspect and strip C2PA, EXIF, XMP and AI prompt data from images.",demo:"https://ai-meta-scrubb.vercel.app",repo:"AIMetaScrubber"},
+  {n:"GKS Scholarship Hub",c:"ml",lab:"Community",d:"Free hub for GKS applicants with universities, verified professors, templates and an outreach tracker.",demo:"https://gks-scholarship-hub.vercel.app/",repo:"GKS-Scholarship-Hub"}
+];
+const CATS = {all:"All",genai:"GenAI & Agents",cv:"Computer Vision",nlp:"NLP",ml:"ML & Data",auto:"Automation"};
+
+const SKILLS = [
+  {h:"AI & Machine Learning",t:["Deep Learning","Computer Vision","NLP","Generative AI","Transformers","CNNs / RNNs","Transfer learning","Fine-tuning"]},
+  {h:"GenAI & Agents",t:["LangChain","LangGraph","RAG","LangSmith","MCP","CrewAI","Ollama","Groq","Prompt engineering"]},
+  {h:"Computer Vision",t:["YOLOv8","OpenCV","EfficientNet","ViT","ResNet","Roboflow","Norfair"]},
+  {h:"Frameworks",t:["PyTorch","TensorFlow / Keras","scikit-learn","Hugging Face","XGBoost","LightGBM","CatBoost"]},
+  {h:"Backend & Deployment",t:["FastAPI","Flask","Streamlit","Docker","Vercel","Railway","n8n"]},
+  {h:"Languages & Data",t:["Python","C++","SQL","MySQL","MongoDB","Pandas","NumPy","Matplotlib","Seaborn","FAISS","Chroma"]}
+];
+
+const CERTS = [
+  {n:"Claude Academy: Claude Code 101",o:"Anthropic",y:"Nov 2026",id:"68097d00ce0a7f5fe97839bd95215718",sk:"Claude Code, Subagents"},
+  {n:"AI Agents Intensive Course with Google",o:"Google",y:"Dec 2025",sk:"AI Agents, Agentic AI Development"},
+  {n:"Machine Learning Using Python",o:"Simplilearn",y:"Sep 2025",id:"8917566",sk:"Machine Learning, Supervised Learning",u:"https://drive.google.com/file/d/1_hYSoOIWt7mDkwE4CdTKtanN34ZX6l85/view"},
+  {n:"Certificate of Achievement: Machine Learning",o:"Innovista",y:"Jun 2025",sk:"Machine Learning, Deep Learning",u:"https://learneasy.pk/wp-content/uploads/2025/06/5943_81356.pdf"},
+  {n:"COVID19 Data Analysis Using Python",o:"Coursera",y:"May 2025",id:"K4JJLS6ZJ3TZ",sk:"Data Analysis, Python",u:"https://www.coursera.org/account/accomplishments/verify/K4JJLS6ZJ3TZ"},
+  {n:"Facial Expression Recognition with PyTorch",o:"Coursera",y:"Apr 2025",id:"RWS6YZBXBO28",sk:"Deep Learning, Computer Vision",u:"https://www.coursera.org/account/accomplishments/verify/RWS6YZBXBO28"},
+  {n:"Programming for Everybody (Getting Started with Python)",o:"University of Michigan",y:"Mar 2023",id:"ETNASTKVG3QR",sk:"Python",u:"https://www.coursera.org/account/accomplishments/verify/ETNASTKVG3QR"}
+];
+/* ================================================ */
+
+const GH = "https://github.com/muqadasejaz/";
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+document.getElementById('jobs').innerHTML = EXPERIENCE.map(j => `
+  <div class="job reveal">
+    <div class="when">${esc(j.when)}${j.current ? '<br><span class="now">Current</span>' : ''}</div>
+    <div>
+      <h3>${esc(j.role)}</h3>
+      <div class="org">${esc(j.org)}</div>
+      <ul>${j.points.map(p => `<li>${esc(p)}</li>`).join('')}</ul>
+      <div class="chips">${j.tags.map(t => `<span class="chip">${esc(t)}</span>`).join('')}</div>
+    </div>
+  </div>`).join('');
+
+const filtersEl = document.getElementById('filters'), gridEl = document.getElementById('grid');
+function renderGrid(cat){
+  let list;
+  if (cat === 'all') {
+    const pool = [...PROJECTS, ...ALL_ONLY];
+    list = TOP.map(n => pool.find(p => p.n === n)).filter(Boolean);
+  } else list = PROJECTS.filter(p => p.c === cat);
+  gridEl.innerHTML = list.map(p => `
+    <article class="pcard">
+      <div class="top"><span>${esc(p.lab || CATS[p.c])}</span>${p.demo ? '<span class="star">● Live</span>' : (p.s ? `<span class="star">★ ${p.s}</span>` : '')}</div>
+      <h4>${esc(p.n)}</h4>
+      <p>${esc(p.d)}</p>
+      <div class="links">${p.demo ? `<a href="${p.demo}" target="_blank" rel="noopener">${p.lab ? 'Visit ↗' : 'Demo ↗'}</a>` : ''}${p.noRepo ? '' : `<a href="${GH + p.repo}" target="_blank" rel="noopener">Code</a>`}</div>
+    </article>`).join('');
+}
+filtersEl.innerHTML = Object.entries(CATS).map(([k, v]) => `<button data-c="${k}" class="${k === 'all' ? 'on' : ''}">${v}</button>`).join('');
+filtersEl.addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  filtersEl.querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b));
+  renderGrid(b.dataset.c);
+});
+renderGrid('all');
+
+document.getElementById('skillsGrid').innerHTML = SKILLS.map(s => `
+  <div class="skill"><h4>${esc(s.h)}</h4><div class="chips">${s.t.map(t => `<span class="chip">${esc(t)}</span>`).join('')}</div></div>`).join('');
+
+document.getElementById('certs').innerHTML = CERTS.map(c => {
+  const inner = `<div><h4>${esc(c.n)}</h4><p>${esc(c.o)} · ${esc(c.sk)}</p>${c.id ? `<p class="cid">Credential ID ${esc(c.id)}</p>` : ''}</div><span class="yr">${esc(c.y)}${c.u ? ' ↗' : ''}</span>`;
+  return c.u ? `<a class="cert" href="${c.u}" target="_blank" rel="noopener">${inner}</a>` : `<div class="cert">${inner}</div>`;
+}).join('');
+
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// theme
+const root = document.documentElement;
+try { if (localStorage.getItem('me-theme') === 'light') root.classList.add('light'); } catch(e){}
+document.getElementById('theme').addEventListener('click', () => {
+  root.classList.toggle('light');
+  try { localStorage.setItem('me-theme', root.classList.contains('light') ? 'light' : 'dark'); } catch(e){}
+});
+
+// mobile menu
+const mb = document.getElementById('menuBtn'), mm = document.getElementById('mobileMenu');
+mb.addEventListener('click', () => { const o = mm.classList.toggle('open'); mb.setAttribute('aria-expanded', o); });
+mm.addEventListener('click', e => { if (e.target.tagName === 'A') { mm.classList.remove('open'); mb.setAttribute('aria-expanded', false); } });
+
+// reveal on scroll
+const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }), {threshold:.12}) : null;
+document.querySelectorAll('.reveal').forEach(el => io ? io.observe(el) : el.classList.add('in'));
+</script>
+</body>
+</html>
